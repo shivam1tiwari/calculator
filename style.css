@@ -4,7 +4,6 @@ body{
 .calculator__container{
   display: grid;
   grid-template-columns: 2fr 6fr;
-  /* min-height: 100%; */
   background-color: rgb(163, 159, 159);
   padding: 2rem;
 }

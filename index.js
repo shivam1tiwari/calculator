@@ -1,7 +1,5 @@
 import { isPalindrom, findFactorial, findFibSeries, findGcd, findInterSection, isAnagram, setDifference, matrixSum, diagonalSum, mySlice, mySplice, isPrime, union } from "./utils.js";
-
 import { union1, mDiagSum, mSum,splice, slice, aB, fGcd, fLcd, anaG, facto, isPri, palin, fib, interS } from "./constant.js";
-
 const calculatorContainer = document.getElementById('calculator__container');
 const calculator = document.getElementById('calculator');
 const calculator_1 = document.getElementById('general_calculator-1');
@@ -10,7 +8,9 @@ const dialogBox = document.getElementById('calculator__dialogbox')
 const secCal = document.getElementById('sec-cal');
 const secCal1 = document.getElementById('sec-cal-1');
 const secCal2 = document.getElementById('sec-cal-2');
-
+/**
+ * Tis is event listener which is care about Parent of calculator div
+ */
 calculatorContainer.addEventListener('click', (e)=>{
   const section = e.target.id;
   if(section == 'calculator'){
@@ -18,28 +18,20 @@ calculatorContainer.addEventListener('click', (e)=>{
     secCal.classList.toggle('invisible');
     secCal1.classList.add('invisible');
     secCal2.classList.add('invisible');
-    // model2.classList.add("invisible");
-    // model3.classList.add("invisible");
   }
 
   if(section == 'general_calculator-1'){
     dialogBox.innerHTML = " "
-    // const calSec = document.getElementById('sec-cal-1');
     secCal1.classList.toggle('invisible')
     secCal2.classList.add('invisible');
     secCal.classList.add('invisible');
-    // model1.classList.add("invisible");
-    // model3.classList.add("invisible");
   }
 
   if(section == 'general_calculator-2'){
     dialogBox.innerHTML = " "
-    // const calSec = document.getElementById('sec-cal-2');
     secCal2.classList.toggle('invisible');
     secCal.classList.add('invisible');
     secCal1.classList.add('invisible');
-    // model1.classList.add("invisible");
-    // model2.classList.add("invisible");
   }
 
 })
@@ -99,15 +91,10 @@ secCal.addEventListener('click',(e)=>{
 
       if(button.innerHTML == "perce"){
         const result = document.getElementById('result-val');
-
         const perce = ((+number2.value)/(+number1.value))*100;
         result.innerHTML = perce.toFixed(2) + "%";
       }
-
-    })
-
-  
- 
+    }) 
 })
 
 secCal1.addEventListener('click',(e)=>{
@@ -133,7 +120,6 @@ secCal1.addEventListener('click',(e)=>{
       const but = document.createElement('button');
        form.className = "dialog-m"
         input.type = 'number';
-        // input.min = "1";
         input.required = true;
         input.placeholder = "Enter matrix Row size";    
         but.type = "submit";
@@ -158,18 +144,18 @@ secCal1.addEventListener('click',(e)=>{
               matrix = `[ ${matrix + input.value + "\n"} ]`  // matrix show
             }
 
-            // arr.push(input.value.split(","))
-            
             if(val1 != input.value.split(",").length ){
               alert(`Enter correct column size should be ${val1} `);
               return;
             }
+
             if( coun < val - 1){
             arr.push(input.value.split(","))
             console.log(input.value.split(","));
             matrix = matrix + `[ ${input.value } ]` //matrix show
             }
           }
+
           if(val > coun){ 
             coun++;
             console.log(coun) 
@@ -179,7 +165,7 @@ secCal1.addEventListener('click',(e)=>{
           input.placeholder = `Enter Matrix Row ${coun + 1}`;
           dialogBox.appendChild(form);
           }
-          console.log(coun)
+          
           if(val == coun){
             const sum = matrixSum(arr)
             const div = document.createElement('div');
@@ -189,25 +175,16 @@ secCal1.addEventListener('click',(e)=>{
             </pre>`;
             dialogBox.innerHTML = ""
             dialogBox.appendChild(div);
-            // dialogBox.innerHTML = sum;
           }
         })}
         inp();
       form.appendChild(input);
       form.appendChild(but);
       dialogBox.appendChild(form);
-      
       return;
-
-      // dialogBox.innerHTML = mSum;
-      // const button = document.getElementById('button')
-      // button.innerHTML = "M-Sum"
     }
+
     if(e.target.id == 'm-diago-sum'){
-      // dialogBox.innerHTML = "";
-      // dialogBox.innerHTML = mDiagSum;
-      // const button = document.getElementById('button')
-      // button.innerHTML = "M-D-Sum"
       dialogBox.innerHTML = "";
       let val;
       let arr = []
@@ -218,7 +195,6 @@ secCal1.addEventListener('click',(e)=>{
       const input = document.createElement('input');
       const but = document.createElement('button');
         input.type = 'number';
-        // input.min = "1";
         input.required = true;
         input.placeholder = "Enter squre matrix size";    
         but.type = "submit";
@@ -270,11 +246,10 @@ secCal1.addEventListener('click',(e)=>{
         inp();
       form.appendChild(input);
       form.appendChild(but);
-      dialogBox.appendChild(form);
-      
+      dialogBox.appendChild(form);  
       return;
-
    }
+
     if(e.target.id == 'splice'){
       dialogBox.innerHTML = "";
       dialogBox.innerHTML = splice;
@@ -305,6 +280,7 @@ secCal1.addEventListener('click',(e)=>{
 
     button.addEventListener('click',(e)=>{
       e.stopPropagation();
+
       if(button.innerHTML == "Union"){
         const set1 = document.getElementById('number-1');
         const set2 = document.getElementById('number-2');
@@ -316,7 +292,6 @@ secCal1.addEventListener('click',(e)=>{
       }
 
       if(button.innerHTML == "InterS"){
-        // const sub = +set1.value - (+set2.value);
         const set1 = document.getElementById('number-1');
         const set2 = document.getElementById('number-2');
         const result = document.getElementById("result-val");
@@ -445,10 +420,8 @@ secCal2.addEventListener('click',(e)=>{
       dialogBox.innerHTML = ""
       dialogBox.innerHTML = facto;
       const button = document.getElementById('button')
-      button.innerHTML = "Fac"
-      
+      button.innerHTML = "Fac" 
     }
-  
 
     button.addEventListener('click',(e)=>{
       e.stopPropagation();

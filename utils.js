@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {String} input 
+ * @returns {String} Palindrom or Not Palindrom
+ */
 export function isPalindrom(input){
   let str = input.trim();
   if(!str){
@@ -13,7 +18,12 @@ export function isPalindrom(input){
   }
 return "Palindrom"
 }
-
+/**
+ * 
+ * @param {String} a 
+ * @param {String} b 
+ * @returns {String} Anagram or Not Anagram
+ */
 export function isAnagram(a, b){
 const str1 = a.trim();
 const str2 = b.trim();
@@ -30,10 +40,14 @@ for(let i in obj1){
     return "Not Anagram"
   }
 }
-
 return "Anagram"
 }
-
+/**
+ * 
+ * @param {Number} a 
+ * @param {Number} b 
+ * @returns {Number} gcd of a and b
+ */
 export function findGcd(a, b){
 let min = +b;
 let max = +a
@@ -50,8 +64,11 @@ for(let i = 1; i <= min; i++ ){
 }
 return gcd;
 }
-
-
+/**
+ * 
+ * @param {Number} n > 0 
+ * @returns {Number} factorial of n i.e (5! = 120)
+ */
 export function findFactorial (n){
 if(n < 0) return "Please Enter Positive Number" 
 if(n == 0)return "1"
@@ -61,7 +78,11 @@ for(let i = 0; i < n; i++){
 }
 return fact;
 }
-
+/**
+ * 
+ * @param {Number} n 
+ * @returns {String} String -  represents Fib series 
+ */
 export function findFibSeries(n){
 if(n <= 0)return "Enter correct number";
 let series = ""
@@ -82,7 +103,13 @@ for(let i = 1; i <= n; i++){
 
 return series;
 }
-
+/**
+ * 
+ * @param {Number} start 
+ * @param {Number} end 
+ * @param {Array} arr 
+ * @returns {Array} Array after slicing 
+ */
 export function mySlice(start, end, arr){
  let arr1 = []; 
  if(!start){
@@ -99,30 +126,34 @@ export function mySlice(start, end, arr){
   arr1 = arr.slice(start, end);
  return arr1;
 }
-
+/**
+ * 
+ * @param {Number} index 
+ * @param {Number} n 
+ * @param {Array} arr 
+ * @param {Array} ar 
+ * @returns {Array} Array after splicing
+ */
 export function mySplice(index,n,arr, ar ){
-  
   let arr1 = arr;
   if(n == "" && ar[0] == "" && index =="" ){
-   
     return arr1;
   }
-  // if(+n == 0){
-  //   arr1.splice(index, +n, ...ar);
-  //   return arr1;
-  // } 
+
  if(n == ""){
   console.log(n,ar[0])
   arr1.splice(index)
   return arr1
  } 
- console.log(n,ar[0])
-//  if(n == 0 && (index)
-arr1.splice(index, +n, ...ar)
 
+arr1.splice(index, +n, ...ar)
 return arr1;
 }
-
+/**
+ * 
+ * @param {Array} arr 
+ * @returns {Number} Sum of Matrix
+ */
 export function matrixSum(arr){
 let  arr1 = []
 let sum = 0;
@@ -132,10 +163,13 @@ for(let i = 0; i < arr.length; i++ ){
 for(let i = 0; i < arr1.length; i++){
   sum = sum + (+arr1[i])
 }
-
 return sum;
 }
-
+/**
+ * 
+ * @param {Array} arr 
+ * @returns Diagonal sum of matrix.
+ */
 export function diagonalSum(arr){
 if(arr.length != arr[0].length)return "Please enter square matrix"
 let arr1 = []
@@ -153,12 +187,12 @@ for(let i = 0; i < d; i++){
 
 return sum;
 }
-
-// console.log(diagonalSum([
-// [10,9],
-// [9,10]
-// ]))
-
+/**
+ * 
+ * @param {Array} arr1 
+ * @param {Array} arr2 
+ * @returns Intersection in the Form of Array
+ */
 export function findInterSection(arr1, arr2){
 let min = arr1;
 let max = arr2;
@@ -169,9 +203,9 @@ if(min.length > max.length){
   console.log(min)
 }
 const arr = [];
-
 for(let i = 0; i < min.length; i++){
  for(let j = 0; j < max.length; j++){
+
   if(min[i] == max[j]){
     arr.push(min[i])
   }
@@ -179,7 +213,12 @@ for(let i = 0; i < min.length; i++){
 }
 return arr;
 }
-
+/**
+ * 
+ * @param {Array} a 
+ * @param {Array} b 
+ * @returns Difference of two Matrix as a form of Array
+ */
 export function setDifference(a, b){
 const arr = []
 for(let i = 0; i < a.length; i++){
@@ -197,7 +236,11 @@ for(let i = 0; i < a.length; i++){
 }
 return arr;
 }
-
+/**
+ * 
+ * @param {Number} n is a Number  
+ * @returns String Not Prime | Prime Number | Please enter Number
+ */
 export function isPrime(n){
  if(isNaN(n))return "Please enter Number" 
  if(n <= 1)return " Not Prime";
@@ -208,7 +251,12 @@ export function isPrime(n){
  }
  return "Prime Number"
 }
-
+/**
+ * 
+ * @param {Array} arr1 is an Array
+ * @param {Array} arr2 is an Array
+ * @returns Array 
+ */
  export function union(arr1, arr2){
  const set = new Set();
  for(let i of arr1){
